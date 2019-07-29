@@ -83,10 +83,30 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | ------------------------------------ |:-----------:|
 | 整形 | `Space m f l` |
 | バッファごと整形？ | `Space m f b` |
+| 行番号を表示<br>設定ファイルで、 | `dotspacemacs-line-numbers t` |
 | `cider-jack-in clj`を使う<br>Ciderモード（cljファイルを開いている時）だけ使える | `, '` |
+| カーソル上の関数だけをコンパイル | `, f e` |
+
+## Cider-jack-in操作
+| 目的                    | コマンド                |
+| ---------------------- |:----------------------:|
 | 履歴を上に遡る / 下に戻る | `Ctrl + k` / `Ctrl + j` |
 | 更新 | `(use 'sandbox.core :reload)` |
-| 行番号を表示<br>設定ファイルで、 | `dotspacemacs-line-numbers t` |
+
+
+## 設定 (`.spacemacs`)
+
+### cider-repl
+
+`Ctrl + Enter`でREPL内改行できるようにキーバインド設定
+
+```
+(defun dotspacemacs/user-config ()
+  (with-eval-after-load 'cider
+    (evil-define-key 'insert cider-repl-mode-map
+      (kbd "C-<return>") 'cider-repl-newline-and-indent)))
+```
+
 
 ## 問題解決
 
