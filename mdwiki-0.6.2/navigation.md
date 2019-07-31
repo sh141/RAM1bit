@@ -12,7 +12,7 @@
   * [pyenv](../programming/environment/pyenv.md)
   * [nvm](../programming/environment/nvm.md)
 
-[Git](/git/git.md)
+[Git](../git/git.md)
 
 [エディタ]()
 

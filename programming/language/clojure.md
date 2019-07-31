@@ -4,6 +4,7 @@
 http://nyamtech.blogspot.com/2012/06/clojure_15.html
 
 ## クロージャ
+
 ```
 (defn messenger-builder [greeting]
     (fn [] (println greeting)))
