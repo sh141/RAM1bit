@@ -1,6 +1,8 @@
 # [spacemacs](https://github.com/syl20bnr/spacemacs)の神
 使えるコマンド一覧は `Space Space`で探す
 
+エラーメッセージは`Messages`バッファで見られる
+
 ## Macでのインストール
 
 ### emacs-plusをダウンロード
