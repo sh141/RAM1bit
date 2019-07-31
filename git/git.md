@@ -1,118 +1,200 @@
 # Gitの神
 
-- Gitで扱いたくないファイルを無視：.gitignore
+## Gitで扱いたくないファイルを無視：.gitignore
 
-    作業ディレクトリに `.gitignore`ファイルを置いて無視したいファイル名を列挙
+作業ディレクトリに `.gitignore`ファイルを置いて無視したいファイル名を列挙
 
-    例えば `sample.txt`と `.idea/`以下全てを無視したいなら
+例えば `sample.txt`と `.idea/`以下全てを無視したいなら
 
-        sample.txt
-        .idea/
+```
+sample.txt
+.idea/
+```
 
-- .gitignoreをglobalで使う
+## .gitignoreをglobalで使う
 
-    （必要なのかどうか謎）
+（必要なのかどうか謎）
 
-    `git config --global core.excludesfile ~/.gitignore_global`
+```console
+git config --global core.excludesfile ~/.gitignore_global
+```
 
-    `~/.gitignore_global`に無視したいファイルを列挙
+`~/.gitignore_global`に無視したいファイルを列挙
 
-- リモートにあるhoge.tmpを管理対象から削除
+## リモートにあるhoge.tmpを管理対象から削除
 
-    `git rm --cached hoge.tmp` 
+```console
+git rm --cached hoge.tmp
+``` 
 
-- 状態確認：status, diff, log, reflog
+## 状態確認：status, diff, log, reflog
 
-    今の状態を見る
-    `git status`
+今の状態を見る
 
-    最後のcommitとの差分を見る
-    `git diff`
-    mySource.scalaファイルだけ差分を見る
-    `git diff mySource.scala`
+```console
+git status
+```
 
-    commitの履歴を見る
-    `git log`
+最後のcommitとの差分を見る
 
-    それぞれのcommitを1行にする
-    `git log --oneline`
+```console
+git diff
+```
 
-    commit履歴をグラフっぽくする
-    `git log --graph`
+mySource.scalaファイルだけ差分を見る
 
-    あらゆる履歴を見る神の見えざる目
-    `git reflog`
+```console
+git diff mySource.scala
+```
 
-- 変更履歴を追加：add
+commitの履歴を見る
 
-    aaa.scalaファイルをcommit対象にする (staging)
-    `git add aaa.scala`
-    そこにある全てのファイルをstaging
-    `git add .`
+```console
+git log
+```
 
-- 変更を確約：commit
+それぞれのcommitを1行にする
 
-    ローカル変更をcommitタイトル付きで確約する
-    `git commit -m'タイトル'`
-    ローカル変更をcommitタイトルと内容付きで確約する
+```console
+git log --oneline
+```
 
-        git commit -m'xxxを変更
-        こういう変更をした'
+commit履歴をグラフっぽくする
 
-    コミットメッセージ無しでcommit
+```console
+git log --graph
+```
 
-    `git commit --allow-empty-message -m ''`
+あらゆる履歴を見る神の見えざる目
+```console
+git reflog
+```
 
-- 状態の退避：stash
+## 変更履歴を追加：add
 
-    今の状態を一時的にセーブしておく
-    `git stash save`
-    `git stash`
+aaa.scalaファイルをcommit対象にする (staging)
 
-    セーブした最新の状態を取り出す
-    `git stash pop`
+```console
+git add aaa.scala
+```
 
-    セーブした番号2の状態を取り出す
+そこにある全てのファイルをstaging
 
-    `git stash pop stash@{2}`
+```console
+git add .
+```
 
-    セーブした最新の状態を取り出す（stashも残す）
+## 変更を確約：commit
 
-    `git stash apply`
+ローカル変更をcommitタイトル付きで確約する
 
-    セーブした最新の状態を削除
+```console
+git commit -m'タイトル'
+```
 
-    `git stash drop`
+ローカル変更をcommitタイトルと内容付きで確約する
 
-    セーブした番号2の状態を削除
+```console
+git commit -m'xxxを変更
 
-    `git stash drop stash@{2}`
+こういう変更をした'
+```
 
-    全ての状態を消す
+コミットメッセージ無しでcommit
 
-    `git stash clear`
+```console
+git commit --allow-empty-message -m ''
+```
 
-- リモートに反映
+## 状態の退避：stash
 
-    ローカルにある全ての確約をリモートリポジトリに反映
-    `git push`
-    1個前の変更などを強制push（ダメ推奨）
-    `git push -f`
-    リモートリポジトリに無いaiueブランチをpush
-    `git push --set-upstream origin aiue`
+今の状態を一時的にセーブしておく
 
-- 取り消し
+```console
+git stash save
+```
 
-    最後のコミットに戻る：ローカルの状態も戻る
-    `git reset --hard`
+```console
+git stash
+```
 
-    最後のコミットの1個前のコミットに戻る：ローカルの状態も戻る
-    `git reset --hard head^`
+セーブした最新の状態を取り出す
 
-    全体履歴の1番目に戻る
-    `git reset --hard "HEAD@{1}"`
+```console
+git stash pop
+```
 
-- ブランチ：branch, checkout
+セーブした番号2の状態を取り出す
+
+```console
+git stash pop stash@{2}
+```
+
+セーブした最新の状態を取り出す（stashも残す）
+
+```console
+git stash apply
+```
+
+セーブした最新の状態を削除
+
+```console
+git stash drop
+```
+
+セーブした番号2の状態を削除
+
+```console
+git stash drop stash@{2}
+```
+
+全ての状態を消す
+
+```console
+git stash clear
+```
+
+## リモートに反映
+
+ローカルにある全ての確約をリモートリポジトリに反映
+
+```console
+git push
+```
+
+1個前の変更などを強制push（ダメ推奨）
+
+```console
+git push -f
+```
+
+リモートリポジトリに無いaiueブランチをpush
+
+```console
+git push --set-upstream origin aiue
+```
+
+## 取り消し
+
+最後のコミットに戻る：ローカルの状態も戻る
+
+```console
+git reset --hard
+```
+
+最後のコミットの1個前のコミットに戻る：ローカルの状態も戻る
+
+```console
+git reset --hard head^
+```
+
+全体履歴の1番目に戻る
+
+```console
+git reset --hard "HEAD@{1}"
+```
+
+## ブランチ：branch, checkout
 
     aiueブランチを作る
     `git branch aiue`
