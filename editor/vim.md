@@ -10,8 +10,22 @@ insert modeからvim modeになる： `Escape`または `Ctrl + [`
 
 ペインを縦に切る`:vsplit`
 
-# vim modeでの操作
-## insert mode
+# normal modeでの操作
+## カーソル移動
+
+左 `h`
+
+右 `l`
+
+下 `j`
+
+上 `k`
+
+3文字左へ移動 `3 h`
+
+対応する括弧へ移動 `%`
+
+## insert modeに移行
 
 カーソル位置からinsert mode `i`
 
@@ -31,7 +45,7 @@ insert modeからvim modeになる： `Escape`または `Ctrl + [`
 
 カーソル行から3行を切り取り `3 d d` 
 
-## 範囲選択モード（同じコマンドでモードを抜ける）
+## visualモード（同じコマンドで終了する）
 
 1文字単位で選択モード `v`
 
