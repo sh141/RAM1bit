@@ -2,50 +2,45 @@
 
 insert modeからvim modeになる： `Escape`または `Ctrl + [`
 
-- オプション（ `:`）
+## オプション（ `:`）
 
-    行番号を表示
+行番号を表示 `:set number`
 
-    `:set number`
+ペインを横に切る `:split`
 
-    ペインを横に切る
+ペインを縦に切る`:vsplit`
 
-    `:split`
+# vim modeでの操作
+## insert mode
 
-    ペインを縦に切る
+カーソル位置からinsert mode `i`
 
-    `:vsplit`
+カーソル位置の1文字後からinsert mode `a`
 
-- vim modeでの操作
+カーソル位置から改行してinsert mode `o`
 
-    ## insert mode
+カーソル位置の上に改行してinsert mode `Shift + o`
 
-    カーソル位置からinsert mode: `i`
+一時的にnormal modeに戻る `Ctrl + o` ※1行動するとinsert modeに戻る（`3 h`で移動とかできる）
 
-    カーソル位置の1文字後からinsert mode: `a`
+## 切り取り・貼り付け
 
-    カーソル位置から改行してinsert mode: `o`
+1文字切り取り `x`
 
-    カーソル位置の上に改行してinsert mode: `Shift + o`
+カーソル行を切り取り `d d`
 
-    ## 切り取り・貼り付け
+カーソル行から3行を切り取り `3 d d` 
 
-    1文字切り取り： `x`
+## 範囲選択モード（同じコマンドでモードを抜ける）
 
-    カーソル行を切り取り： `d d`
+1文字単位で選択モード `v`
 
-    カーソル行から3行を切り取り： `3 d d` 
+行単位で選択モード `Shift + v`
 
-    ## 範囲選択モード（同じコマンドでモードを抜ける）
+## [オブジェクト操作](https://qiita.com/kasei-san/items/143af11bb2559cf0e540)（c, d, y）
 
-    1文字単位で選択モード： `v`
+[`コマンド + 回数指定 + オブジェクトの種類の指定`]に従う。
 
-    行単位で選択モード： `Shift + v`
+カーソル上の単語を消して入力を始める（変更） `c w`
 
-- [オブジェクト操作](https://qiita.com/kasei-san/items/143af11bb2559cf0e540)（c, d, y）
-
-    [`コマンド + 回数指定 + オブジェクトの種類の指定`]に従う。
-
-    カーソル上の単語を消して入力を始める（変更）： `c w`
-
-    直前の操作を実行（insert modeに入ってから出るまでの操作）： `.`
+直前の操作を実行（insert modeに入ってから出るまでの操作） `.`

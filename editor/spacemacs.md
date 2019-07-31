@@ -94,19 +94,42 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 更新 | `(use 'sandbox.core :reload)` |
 
 
-## 設定 (`.spacemacs`)
+## spacemacsの設定 (`.spacemacs`)
 
-### cider-repl
+### キーバインド
 
-`Ctrl + Enter`でREPL内改行できるようにキーバインド設定
+`defun dotspacemacs/user-config ()`下に記述する。
+
+- insert modeでも`hjkl`でカーソル移動する
+
+※前の行に移動するキーバインド名はまだ不明
 
 ```
 (defun dotspacemacs/user-config ()
-  (with-eval-after-load 'cider
-    (evil-define-key 'insert cider-repl-mode-map
-      (kbd "C-<return>") 'cider-repl-newline-and-indent)))
+
+  ;;Ctrl-hで左移動
+  (bind-key "C-h" 'left-char)
+  
+  ;;Ctrl-lで右移動
+  (bind-key "C-l" 'right-char)
+  
+  ;;Ctrl-jで次の行へ移動
+  (bind-key "C-j" 'next-line)
+  
+  ;;Ctrl-kで前の行へ移動
+  (bind-key "C-k" 'nil))
 ```
 
+- cider-replで`()`内を入力中に`Ctrl + Enter`で改行する
+
+```
+(defun dotspacemacs/user-config ()
+
+  (with-eval-after-load 'cider
+    (evil-define-key 'insert cider-repl-mode-map
+      ;;Ctrl-Enterで改行
+      (kbd "C-<return>") 'cider-repl-newline-and-indent)))
+```
 
 ## 問題解決
 
