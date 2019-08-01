@@ -1,6 +1,6 @@
-# Gitの神
+# Git の神
 
-## Gitで扱いたくないファイルを無視：.gitignore
+## Git で扱いたくないファイルを無視：.gitignore
 
 作業ディレクトリに `.gitignore`ファイルを置いて無視したいファイル名を列挙
 
@@ -11,98 +11,99 @@ sample.txt
 .idea/
 ```
 
-## .gitignoreをglobalで使う
+## .gitignore を global で使う
 
 （必要なのかどうか謎）
 
-```console
+```
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
 `~/.gitignore_global`に無視したいファイルを列挙
 
-## リモートにあるhoge.tmpを管理対象から削除
+## リモートにある hoge.tmp を管理対象から削除
 
-```console
+```
 git rm --cached hoge.tmp
-``` 
+```
 
 ## 状態確認：status, diff, log, reflog
 
 今の状態を見る
 
-```console
+```
 git status
 ```
 
-最後のcommitとの差分を見る
+最後の commit との差分を見る
 
-```console
+```
 git diff
 ```
 
-mySource.scalaファイルだけ差分を見る
+mySource.scala ファイルだけ差分を見る
 
-```console
+```
 git diff mySource.scala
 ```
 
-commitの履歴を見る
+commit の履歴を見る
 
-```console
+```
 git log
 ```
 
-それぞれのcommitを1行にする
+それぞれの commit を 1 行にする
 
-```console
+```
 git log --oneline
 ```
 
-commit履歴をグラフっぽくする
+commit 履歴をグラフっぽくする
 
-```console
+```
 git log --graph
 ```
 
 あらゆる履歴を見る神の見えざる目
-```console
+
+```
 git reflog
 ```
 
 ## 変更履歴を追加：add
 
-aaa.scalaファイルをcommit対象にする (staging)
+aaa.scala ファイルを commit 対象にする (staging)
 
-```console
+```
 git add aaa.scala
 ```
 
-そこにある全てのファイルをstaging
+そこにある全てのファイルを staging
 
-```console
+```
 git add .
 ```
 
 ## 変更を確約：commit
 
-ローカル変更をcommitタイトル付きで確約する
+ローカル変更を commit タイトル付きで確約する
 
-```console
+```
 git commit -m'タイトル'
 ```
 
-ローカル変更をcommitタイトルと内容付きで確約する
+ローカル変更を commit タイトルと内容付きで確約する
 
-```console
+```
 git commit -m'xxxを変更
 
 こういう変更をした'
 ```
 
-コミットメッセージ無しでcommit
+コミットメッセージ無しで commit
 
-```console
+```
 git commit --allow-empty-message -m ''
 ```
 
@@ -110,47 +111,47 @@ git commit --allow-empty-message -m ''
 
 今の状態を一時的にセーブしておく
 
-```console
+```
 git stash save
 ```
 
-```console
+```
 git stash
 ```
 
 セーブした最新の状態を取り出す
 
-```console
+```
 git stash pop
 ```
 
-セーブした番号2の状態を取り出す
+セーブした番号 2 の状態を取り出す
 
-```console
+```
 git stash pop stash@{2}
 ```
 
-セーブした最新の状態を取り出す（stashも残す）
+セーブした最新の状態を取り出す（stash も残す）
 
-```console
+```
 git stash apply
 ```
 
 セーブした最新の状態を削除
 
-```console
+```
 git stash drop
 ```
 
-セーブした番号2の状態を削除
+セーブした番号 2 の状態を削除
 
-```console
+```
 git stash drop stash@{2}
 ```
 
 全ての状態を消す
 
-```console
+```
 git stash clear
 ```
 
@@ -158,19 +159,19 @@ git stash clear
 
 ローカルにある全ての確約をリモートリポジトリに反映
 
-```console
+```
 git push
 ```
 
-1個前の変更などを強制push（ダメ推奨）
+1 個前の変更などを強制 push（ダメ推奨）
 
-```console
+```
 git push -f
 ```
 
-リモートリポジトリに無いaiueブランチをpush
+リモートリポジトリに無い aiue ブランチを push
 
-```console
+```
 git push --set-upstream origin aiue
 ```
 
@@ -178,102 +179,104 @@ git push --set-upstream origin aiue
 
 最後のコミットに戻る：ローカルの状態も戻る
 
-```console
+```
 git reset --hard
 ```
 
-最後のコミットの1個前のコミットに戻る：ローカルの状態も戻る
+最後のコミットの 1 個前のコミットに戻る：ローカルの状態も戻る
 
-```console
+```
 git reset --hard head^
 ```
 
-全体履歴の1番目に戻る
+全体履歴の 1 番目に戻る
 
-```console
+```
 git reset --hard "HEAD@{1}"
 ```
 
 ## ブランチ：branch, checkout
 
-    aiueブランチを作る
-    `git branch aiue`
-    aiueブランチに移動
-    `git checkout aiue`
+aiueブランチを作る
+`git branch aiue`
 
-    強制checkout
+aiueブランチに移動
+`git checkout aiue`
 
-    `git checkout -f aiue`
+強制checkout
 
-    今いるブランチaiueをokimochiに変更
+`git checkout -f aiue`
 
-    `git branch -m okimochi`
+今いるブランチaiueをokimochiに変更
 
-    ブランチaiueをokimochiに変更
+`git branch -m okimochi`
 
-    `git branch -m aiue okimochi`
+ブランチaiueをokimochiに変更
 
-    ローカルブランチaiueを削除
+`git branch -m aiue okimochi`
 
-    `git branch -d aiue`
+ローカルブランチaiueを削除
 
-    リモートブランチaiueを削除
+`git branch -d aiue`
 
-    `git push --delete origin aiue`
+リモートブランチaiueを削除
+
+`git push --delete origin aiue`
 
 - 更新を確認：fetch
 
-    `git fetch`
+`git fetch`
 
 - リモートをローカルに反映：pull
 
-    `git pull`
+`git pull`
 
-    developブランチから反映
+develop ブランチから反映
 
-    `git pull origin develop`
+`git pull origin develop`
 
 - リモートからコピー (clone)
 
-    sh141のaiueリポジトリからclone
-    `git clone https://github.com/sh141/aiue.git`
+sh141 の aiue リポジトリから clone
+`git clone https://github.com/sh141/aiue.git`
 
-    devブランチを指定してclone
-    `git clone -b dev https://github.com/sh141/aiue.git`
+dev ブランチを指定して clone
+`git clone -b dev https://github.com/sh141/aiue.git`
 
 - リモートリポジトリを後から追加
 
-    `git remote add origin [自分のリポジトリ.git]`
+`git remote add origin [自分のリポジトリ.git]`
 
 - 他のブランチを取り込み：merge
 
-    今のブランチにaiueブランチを取り込む
+今のブランチに aiue ブランチを取り込む
 
-    `git merge aiue`
+`git merge aiue`
 
-    今のブランチにaiueブランチを取り込む（commitしない）
+今のブランチに aiue ブランチを取り込む（commit しない）
 
-    `git merge --no-commit aiue`
+`git merge --no-commit aiue`
 
-    mergeを取り消してmerge前の状態に戻す
+merge を取り消して merge 前の状態に戻す
 
-    `git merge --abort`
+`git merge --abort`
 
 ## 問題解決
 
-- Conflictを解消
-    1. `git status`で状況確認
-    2. エディタでどちらの変更を受け入れるか決めて修正
-    3. 修正したファイルを `git add`でステージング
-    4. 他にConflictが無ければ 
-    `git commit`  => `git push`
+- Conflict を解消
 
-- ブランチaiueから1ファイルaaa.mdだけpullする
+  1. `git status`で状況確認
+  2. エディタでどちらの変更を受け入れるか決めて修正
+  3. 修正したファイルを `git add`でステージング
+  4. 他に Conflict が無ければ
+     `git commit` => `git push`
 
-    `git checkout origin/aiue -- aaa.md`
+- ブランチ aiue から 1 ファイル aaa.md だけ pull する
 
-    ※今のブランチに無くてaiueブランチにあるファイルはダメな模様
+  `git checkout origin/aiue -- aaa.md`
 
-- 1ファイルaaa.mdだけ番号 `0bf1c82`の状態に戻す：reset
+  ※今のブランチに無くて aiue ブランチにあるファイルはダメな模様
 
-    `git checkout 0bf1c82 aaa.md`
+- 1 ファイル aaa.md だけ番号 `0bf1c82`の状態に戻す：reset
+
+  `git checkout 0bf1c82 aaa.md`
