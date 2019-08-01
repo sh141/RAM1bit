@@ -1,9 +1,13 @@
 # pyenvの神
 
-- 今使っているpythonバージョンを確認
+## 今使っているpythonバージョンを確認
 
-    `pyenv versions`
+```console
+$ pyenv versions
+```
 
-- インストール可能なpythonバージョン一覧を確認
+## インストール可能なpythonバージョン一覧を確認
 
-    `pyenv install --list`
+```console
+$ pyenv install --list
+```
