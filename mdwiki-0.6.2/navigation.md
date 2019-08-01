@@ -7,6 +7,7 @@
   * [sbt](../programming/language/sbt.md)
   * [Clojure](../programming/language/clojure.md)
   * [Python](../programming/language/python.md)
+  * [Vue](../programming/language/vue.md)
   * # Environment
   * [jenv](../programming/environment/jenv.md)
   * [pyenv](../programming/environment/pyenv.md)
