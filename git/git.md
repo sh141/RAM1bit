@@ -198,68 +198,110 @@ git reset --hard "HEAD@{1}"
 ## ブランチ：branch, checkout
 
 aiueブランチを作る
-`git branch aiue`
+
+```
+git branch aiue
+```
 
 aiueブランチに移動
-`git checkout aiue`
+
+```
+git checkout aiue
+```
 
 強制checkout
 
-`git checkout -f aiue`
+```
+git checkout -f aiue
+```
 
 今いるブランチaiueをokimochiに変更
 
-`git branch -m okimochi`
+```
+git branch -m okimochi
+```
 
 ブランチaiueをokimochiに変更
 
-`git branch -m aiue okimochi`
+```
+git branch -m aiue okimochi
+```
 
 ローカルブランチaiueを削除
 
-`git branch -d aiue`
+```
+git branch -d aiue
+```
 
 リモートブランチaiueを削除
 
-`git push --delete origin aiue`
+```
+git push --delete origin aiue
+```
 
 - 更新を確認：fetch
 
-`git fetch`
+```
+git fetch
+```
 
 - リモートをローカルに反映：pull
 
-`git pull`
+```
+git pull
+```
 
 develop ブランチから反映
 
-`git pull origin develop`
+```
+git pull origin develop
+```
 
 - リモートからコピー (clone)
 
 sh141 の aiue リポジトリから clone
-`git clone https://github.com/sh141/aiue.git`
+
+```
+git clone https://github.com/sh141/aiue.git
+```
 
 dev ブランチを指定して clone
-`git clone -b dev https://github.com/sh141/aiue.git`
+```
+git clone -b dev https://github.com/sh141/aiue.git
+```
 
 - リモートリポジトリを後から追加
 
-`git remote add origin [自分のリポジトリ.git]`
+```
+git remote add origin [自分のリポジトリ.git]
+```
 
 - 他のブランチを取り込み：merge
 
 今のブランチに aiue ブランチを取り込む
 
-`git merge aiue`
+```
+git merge aiue
+```
 
 今のブランチに aiue ブランチを取り込む（commit しない）
 
-`git merge --no-commit aiue`
+```
+git merge --no-commit aiue
+```
 
 merge を取り消して merge 前の状態に戻す
 
-`git merge --abort`
+```
+git merge --abort
+```
+
+## 検索：grep
+
+文字列okimochiを検索する 
+```
+git grep "okimochi"
+```
 
 ## 問題解決
 
