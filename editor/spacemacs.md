@@ -13,13 +13,18 @@
 
 ### まずEmacsのダウンロード
 
-[公式のここ](https://github.com/syl20bnr/spacemacs#windows)からEmacsのstableをダウンロード
+[GNU公式](http://ftp.gnu.org/pub/gnu/emacs/windows/)からEmacs26.2をダウンロード。
 
-解凍した `emacs`ディレクトリ以下を好きな所に置いとく（例えば `C:\Program Files\emacs`）
+（[公式のここ](https://github.com/syl20bnr/spacemacs#windows)だと日本語IMEのインライン変換で詰む。具体的には日本語は変換を確定するまで表示されないので超不便。[ここ](https://minejima.jp/blog/2017/11/05/emacs-25-3をwindows10にインストール/)にもインライン変換の不具合について書かれている）
+
+解凍したファイル群（binとか色々）を `emacs-26.2`のようなディレクトリにまとめて好きな所に置いとく（例えば `C:\Program Files\emacs-26.2`）
 
 ### システム環境変数の設定
 
-`コントロールパネル > システムとセキュリティ > システム > システムの詳細設定 > システムのプロパティ > 環境変数 > (システム環境変数の) Path`で、 `emacs.exe`があるディレクトリを変数名HOMEで新規追加する（例えば`C:\Program Files\emacs\bin`）
+`コントロールパネル > システムとセキュリティ > システム > システムの詳細設定 > システムのプロパティ > 環境変数 > (システム環境変数の) Path`で、 `.emacs.d`があるディレクトリを変数名HOMEで新規追加する（例えばホームディレクトリ`C:\Users\user1`）
+
+（基本的に`.emacs.d`はホームディレクトリ直下に作られるので、ホームディレクトリを追加で良い）
+
 
 ### spacemacsのダウンロード
 
@@ -69,12 +74,13 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | ディレクトリから辿ってファイルを開く  
 | `Ctrl + {hjkl}`でファイル候補を選べる<br>直接入力すると候補を絞れる<br>`Tab`でどんどん補完できる<br>Enterを押してしまうとバッファ内操作となる  | `Space f f` |
 | バッファを閉じる                     | `Space b d` |
-| バッファ一覧を表示 | `Space b b` |
+| バッファ一覧を表示                   | `Space b b` |
 
 ## ウィンドウ操作
 | 目的                                 | コマンド     |
 | ------------------------------------ |:-----------:|
 | 隣に移動                              | `Space w w` |
+| vimっぽく上下左右に移動                | `Space w h` / `Space w j` / `Space w k` / `Space w l` |
 | 今のウィンドウを最大化                 | `Space w m` |
 | ウィンドウ2分割（直前の分割バッファがあればそれを割り当てる） | `Space w 2` |
 | ウィンドウを1つに戻す                  | `Space w 1` |
@@ -89,6 +95,8 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 行番号を表示<br>設定ファイルで、 | `dotspacemacs-line-numbers t` |
 | `cider-jack-in clj`を使う<br>Ciderモード（cljファイルを開いている時）だけ使える | `, '` |
 | カーソル上の関数だけをコンパイル | `, f e` |
+| 定義ジャンプ                    | `Space g g` |
+| 定義ジャンプ先から戻る           | `Space g b` |
 
 ## Cider-jack-in操作
 | 目的                    | コマンド                |
