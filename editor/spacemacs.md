@@ -107,31 +107,90 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 
 ## spacemacsの設定 (`.spacemacs`)
 
-### キーバインド
+## コマンドの反応速度を上げる
+初期設定では入力から反応まで0.4秒の遅延時間がある。
 
-`defun dotspacemacs/user-config ()`下に記述する。
+それを例えば0.1秒にする。
 
-- insert modeでも`hjkl`でカーソル移動する
+```
+(defun dotspacemacs/init ()
 
-※前の行に移動するキーバインド名はまだ不明
+  (setq-default
+
+   dotspacemacs-which-key-delay 0.1
+
+  ))
+```
+
+## 行番号を表示する
+vimで言う`:set number`状態にできる（逆に`:set number`は使えない）
+
+```
+(defun dotspacemacs/init ()
+
+  (setq-default
+
+   dotspacemacs-line-numbers t
+
+  ))
+```
+
+## フォントを変える
+
+```
+(defun dotspacemacs/init ()
+
+  (setq-default
+
+   dotspacemacs-default-font '("Dejavu Sans Mono"
+                               :size 20
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
+  ))
+```
+
+
+## 起動時に最大化する
+初期設定では起動する度に小さい画面のままだが、これを自動で最大化させる。
+
+```
+(defun dotspacemacs/init ()
+
+  (setq-default
+
+   dotspacemacs-maximized-at-startup t
+
+  ))
+```
+
+## insert modeでも`hjkl`でカーソル移動する
 
 ```
 (defun dotspacemacs/user-config ()
 
   ;;Ctrl-hで左移動
-  (bind-key "C-h" 'left-char)
-  
+  (define-key evil-insert-state-map (kbd "C-h") 'left-char)
+
   ;;Ctrl-lで右移動
-  (bind-key "C-l" 'right-char)
-  
+  (define-key evil-insert-state-map (kbd "C-l") 'right-char)
+
   ;;Ctrl-jで次の行へ移動
-  (bind-key "C-j" 'next-line)
-  
+  (define-key evil-insert-state-map (kbd "C-j") 'next-line)
+
   ;;Ctrl-kで前の行へ移動
-  (bind-key "C-k" 'nil))
+  (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
+
+  ;;normal modeでは挙動を封じる
+  (bind-key "C-h" 'nil)
+  (bind-key "C-l" 'nil)
+  (bind-key "C-j" 'nil)
+  (bind-key "C-k" 'nil)
+
+)
 ```
 
-- cider-replで`()`内を入力中に`Ctrl + Enter`で改行する
+## cider-replで`()`内を入力中に`Ctrl + Enter`で改行する
 
 ```
 (defun dotspacemacs/user-config ()
