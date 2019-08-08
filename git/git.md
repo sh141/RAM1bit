@@ -1,5 +1,17 @@
 # Git の神
 
+## gitコマンドにエイリアスをつける
+`~/.gitconfig`で追記する。たとえばこう。
+
+```
+[alias]
+    s = status
+    b = branch
+    ch = checkout
+    cl = clone
+    l = log --oneline --graph
+```
+
 ## Git で扱いたくないファイルを無視：.gitignore
 
 作業ディレクトリに `.gitignore`ファイルを置いて無視したいファイル名を列挙
