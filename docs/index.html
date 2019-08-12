@@ -1,16 +1,28 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RAM1bit</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
 
-<head>
-  <title>RAM1bit</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+  <body>
+    <div id="root">
+      {{ message }}
+      {{ items }}
+    </div>
 
-<body>
-  <div id="root">
-    {{message}}
-  </div>
+    <div id="content"></div>
 
-  <script src="index.js"></script>
-</body>
+    <object
+      id="md-content"
+      data="inner/sample.md"
+      style="display: none"
+    ></object>
 
+    <div id="mdmd" src="./sample.md"></div>
+
+    <script src="index.js"></script>
+  </body>
 </html>

@@ -1,6 +1,18 @@
+
 var app = new Vue({
-  el: '#root',
+  el: "#root",
   data: {
-    message: 'Hello Vue!'
+    message: "Hello Vue!",
+    items: null
   }
-})
+});
+
+
+var obj = document.getElementById("md-content");
+obj.onload = function() {
+  var loadtext = obj;
+  console.log(loadtext);
+};
+
+
+document.getElementById("content").innerHTML = marked(obj.contentDocument);
