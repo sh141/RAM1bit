@@ -113,6 +113,15 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 更新                    | `(use 'sandbox.core :reload)` |
 | 再起動                  | `, s X`                       |
 
+## Git操作 (magit)
+| 目的                   | コマンド                   |
+| ---------------------- | :----------------------: |
+| magitの各種コマンドを使う | `Space g m`<br>`Ctrl + c Ctrl + c` |
+| git status             | `Space g s`              |
+| git log                | `Space g m l l`          |
+| git add .              | `Space g m s`            |
+| git commit -m          | `Space g m c c`          |
+
 ## spacemacsの設定 (`.spacemacs`)
 
 ## コマンドの反応速度を上げる
