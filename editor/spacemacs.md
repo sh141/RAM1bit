@@ -119,8 +119,9 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | magitの各種コマンドを使う | `Space g m`<br>`Ctrl + c Ctrl + c` |
 | git status             | `Space g s`              |
 | git log                | `Space g m l l`          |
-| git add .              | `Space g m s`            |
+| git add .              | `Space g m S`            |
 | git commit -m          | `Space g m c c`          |
+| git push               | `Space g m p u`          |
 
 ## spacemacsの設定 (`.spacemacs`)
 
