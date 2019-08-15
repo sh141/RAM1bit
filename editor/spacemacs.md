@@ -102,7 +102,7 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 整形                                                                    | `Space m f l` |
 | バッファごと整形？                                                         | `Space m f b` |
 | `cider-jack-in clj`を使う<br>Ciderモード（cljファイルを開いている時）だけ使える | `, '` |
-| カーソル上の関数だけをコンパイル                                             | `, f e` |
+| カーソル上の関数だけをコンパイル                                             | `, f e`<br>`Ctrl + c Ctrl + c` |
 | 定義ジャンプ                                                             | `Space g g` |
 | 定義ジャンプ先から戻る                                                     | `Space g b` |
 
