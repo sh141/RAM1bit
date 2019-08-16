@@ -21,6 +21,16 @@ http://nyamtech.blogspot.com/2012/06/clojure_15.html
 `(hello-er)`した時`hello-er`に入っている`(fn [] (println greeting))`の`greeting`is 何だよというのは`hello-er`定義時に入った引数（ずっと使える）
 
 # `連なるもの`操作（配列、List, Vector, ...）
+## 種類
+
+```
+'(1 2 3)     ; list (リスト)
+[1 2 3]      ; vector (ベクター)
+#{1 2 3}     ; set (セット)
+{:a 1, :b 2} ; map (マップ)
+```
+
+## 共通操作
 
 Vector `[1 2 3]`を変数 `aiue`に定義する（遅延評価を使う）
 ```
