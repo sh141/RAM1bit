@@ -122,3 +122,27 @@ Stylistテーブルでidx=2の行のgradeを1に更新する
 ```sql
 update Stylist set grade_idx = 1 where idx = 2;
 ```
+
+
+## 問題解決
+
+## mysql8に繋ごうとした際のエラー
+mysql8に何もせず繋ぐと`SQLException: Unable to load authentication plugin 'caching_sha2_password'`
+
+1. my.cnfに default_authentication_plugin=mysql_native_password追記
+2. その後でmysqlにユーザ作成と権限付与
+
+create user 'user1'@'%' identified by 'user1';
+`grant all privileges on . to 'user1'@'%';
+
+すると SQLException: Unknown system variable 'query_cache_size'に変わる
+
+3.そこでbuild.sbtの mysql-connector-javaをバージョン8にする必要がある（バージョン6.xだったので）
+
+"mysql" % "mysql-connector-java" % "6.0.6"を
+"mysql" % "mysql-connector-java" % "8.0.11"とかにする
+
+- どうもconnector8がmysql8に対応してるらしい
+- mysql側でテーブル作っとかないと IllegalStateException: No column found for Customer. If you use NamedDB, you must override connectionPoolName.になる
+- なんかプログラム側のカラム名を勝手にスネークケースにされてる疑惑が無いでもない
+
