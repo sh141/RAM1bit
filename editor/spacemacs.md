@@ -3,11 +3,13 @@
 
 エラーメッセージは`Messages`バッファで見られる
 
+
 ## Macでのインストール
 
 ### emacs-plusをダウンロード
 ### あああ
 ### [共通設定](#共通設定)へ
+
 
 ## Windowsでのインストール
 
@@ -18,6 +20,7 @@
 （[公式のここ](https://github.com/syl20bnr/spacemacs#windows)だと日本語IMEのインライン変換で詰む。具体的には日本語は変換を確定するまで表示されないので超不便。[ここ](https://minejima.jp/blog/2017/11/05/emacs-25-3をwindows10にインストール/)にもインライン変換の不具合について書かれている）
 
 解凍したファイル群（binとか色々）を `emacs-26.2`のようなディレクトリにまとめて好きな所に置いとく（例えば `C:\Program Files\emacs-26.2`）
+
 
 ### システム環境変数の設定
 
@@ -36,8 +39,10 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 
 ※各ファイルが`~/.emacs.d/spacemacs/...`ではダメ。 `~/.emacs.d/...`とならねば読み込まれない
 
+
 ### EmacsがあるディレクトリでPowerShellあたりを使って `.\runemacs.exe --insecure`
 ※ `runemacs.exe`はコンソールが出ずに起動できる。
+
 
 ### spacemacsの黒い画面が出たらOK。[共通設定](#共通設定)へ
 
@@ -77,6 +82,7 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | バッファを閉じる                     | `Space b d` |
 | バッファ一覧を表示                   | `Space b b` |
 
+
 ## ウィンドウ操作
 | 目的                                                | コマンド     |
 | --------------------------------------------------- |:-----------:|
@@ -89,12 +95,14 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 選択範囲内の文字数を数える (count region)               | `Space x c` |
 | ナビゲーションを表示                                   | `Space f t` |
 
+
 ## フレーム操作
 | 目的                 | コマンド        |
 | ------------------- | :------------: |
 | 新しいフレームを作成   | `Ctrl-x 5 2`<br>`Space F n`<br>`Space w F` |
 | 現在のフレームを削除   | `Space F d`   |
 | 別のフレームに移動     | `Space w o`   |
+
 
 ## Clojureモード操作
 | 目的                                                                    | コマンド     |
@@ -106,6 +114,7 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 定義ジャンプ                                                             | `Space g g` |
 | 定義ジャンプ先から戻る                                                     | `Space g b` |
 
+
 ## Cider-jack-in操作
 | 目的                    | コマンド                       |
 | ---------------------- | :---------------------------: |
@@ -113,15 +122,21 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | 更新                    | `(use 'sandbox.core :reload)` |
 | 再起動                  | `, s X`                       |
 
+
 ## Git操作 (magit)
-| 目的                   | コマンド                   |
-| ---------------------- | :----------------------: |
-| magitの各種コマンドを使う | `Space g m`<br>`Ctrl + c Ctrl + c` |
-| git status             | `Space g s`              |
-| git log                | `Space g m l l`          |
-| git add .              | `Space g m S`            |
-| git commit -m          | `Space g m c c`          |
-| git push               | `Space g m p u`          |
+| 目的                      | コマンド                           |
+| ------------------------- | :----------------------:           |
+| magitの各種コマンドを使う     | `Space g m`<br>`Ctrl + c Ctrl + c` |
+| git status                | `Space g s`                        |
+| git log                   | `Space g m l l`                    |
+| git add .                 | `Space g m S`                      |
+| git commit -m             | `Space g m c c`                    |
+| git push                  | `Space g m p u`                    |
+| git rebase develop        | `Space g m r o` => `develop`を選択 |
+| git rebase -i 4ff89t3     | - log画面で繋げたいコミットを範囲選択する<br>- `r -i i` |
+
+- `status`画面でいきなり各種コマンドを使える（ `l l`で `git log`したり `c c`で `git commit`したり
+
 
 ## spacemacsの設定 (`.spacemacs`)
 
@@ -153,6 +168,7 @@ vimで言う`:set number`状態にできる（逆に`:set number`は使えない
   ))
 ```
 
+
 ## フォントを変える
 
 ```
@@ -182,6 +198,7 @@ vimで言う`:set number`状態にできる（逆に`:set number`は使えない
   ))
 ```
 
+
 ## insert modeでも`hjkl`でカーソル移動する
 
 ```
@@ -208,6 +225,7 @@ vimで言う`:set number`状態にできる（逆に`:set number`は使えない
 )
 ```
 
+
 ## cider-replで`()`内を入力中に`Ctrl + Enter`で改行する
 
 ```
@@ -218,6 +236,7 @@ vimで言う`:set number`状態にできる（逆に`:set number`は使えない
       ;;Ctrl-Enterで改行
       (kbd "C-<return>") 'cider-repl-newline-and-indent)))
 ```
+
 
 ## 問題解決
 
