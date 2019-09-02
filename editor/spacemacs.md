@@ -132,7 +132,7 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | git add .                 | `Space g m S`                      |
 | git commit -m             | `Space g m c c`                    |
 | git push                  | `Space g m p u`                    |
-| git rebase develop        | `Space g m r o` => `develop`を選択 |
+| git rebase develop        | `Space g m r e` => `develop`を選択 |
 | git rebase -i 4ff89t3     | - log画面で繋げたいコミットを範囲選択する<br>- `r -i i` |
 
 - `status`画面でいきなり各種コマンドを使える（ `l l`で `git log`したり `c c`で `git commit`したり
