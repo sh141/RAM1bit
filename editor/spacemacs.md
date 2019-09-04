@@ -76,8 +76,7 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | ---------------------------------- |:--------------:|
 | 設定ファイル`~/.spacemacs`を編集     | `Space f e d` |
 | 設定ファイルの更新を反映             |`Space f e R`   |
-| ディレクトリから辿ってファイルを開く  
-| `Ctrl + {hjkl}`でファイル候補を選べる<br>直接入力すると候補を絞れる<br>`Tab`でどんどん補完できる<br>Enterを押してしまうとバッファ内操作となる  | `Space f f` |
+| ディレクトリから辿ってファイルを開く<br>`Ctrl + {hjkl}`でファイル候補を選べる<br>直接入力すると候補を絞れる<br>`Tab`でどんどん補完できる<br>Enterを押してしまうとバッファ内操作となる  | `Space f f` |
 | 上書き保存                          | `Space f s` |
 | バッファを閉じる                     | `Space b d` |
 | バッファ一覧を表示                   | `Space b b` |
@@ -125,15 +124,16 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 
 ## Git操作 (magit)
 | 目的                      | コマンド                           |
-| ------------------------- | :----------------------:           |
-| magitの各種コマンドを使う     | `Space g m`<br>`Ctrl + c Ctrl + c` |
+| ------------------------- | :------------------------------: |
+| magitの各種コマンドを使う     | `Space g m`<br>`Ctrl + c Ctrl + c`   |
 | git status                | `Space g s`                        |
 | git log                   | `Space g m l l`                    |
 | git add .                 | `Space g m S`                      |
 | git commit -m             | `Space g m c c`                    |
 | git push                  | `Space g m p u`                    |
-| git rebase develop        | `Space g m r e` => `develop`を選択 |
-| git rebase -i 4ff89t3     | - log画面で繋げたいコミットを範囲選択する<br>- `r -i i` |
+| git rebase develop        | `Space g m r e` => `develop`を選択    |
+| git rebase -i 4ff89t3     | 1. log画面で繋げたいコミットを上から範囲選択する<br>2. `r i` |
+|                           | 1. status画面で `r i`<br>2.範囲選択して `Ctrl+c Ctrl+c` |
 
 - `status`画面でいきなり各種コマンドを使える（ `l l`で `git log`したり `c c`で `git commit`したり
 
