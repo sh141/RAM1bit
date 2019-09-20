@@ -3,7 +3,15 @@
 ## 関数と変数
 http://nyamtech.blogspot.com/2012/06/clojure_15.html
 
-## クロージャ
+## S式丸ごとコメントアウト
+
+```
+#_(...
+    ...)_
+```
+普通のコメントアウトは `;`
+
+## クロージャ(clojureではない)
 
 ```
 (defn messenger-builder [greeting]
