@@ -132,8 +132,9 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | git commit -m             | `Space g m c c`                    |
 | git push                  | `Space g m p u`                    |
 | git rebase develop        | `Space g m r e` => `develop`を選択    |
-| git rebase -i 4ff89t3     | 1. log画面で繋げたいコミットを上から範囲選択する<br>2. `r i` |
+| git rebase -i 4ff89t3     | 1. log画面で繋げたいコミット行を上から範囲選択する<br>2. `r i` |
 |                           | 1. status画面で `r i`<br>2.範囲選択して `Ctrl+c Ctrl+c` |
+| git branch okimochi       | `Space g m b c`<br>=> '分岐させたいbranchを選択'<br>=> `okimochi` |
 
 - `status`画面でいきなり各種コマンドを使える（ `l l`で `git log`したり `c c`で `git commit`したり
 
