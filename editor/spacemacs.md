@@ -128,9 +128,15 @@ Emacsは `~/.emacs.d`以下の設定ファイルを読み込むので、そこ�
 | magitの各種コマンドを使う     | `Space g m`<br>`Ctrl + c Ctrl + c`   |
 | git status                | `Space g s`                        |
 | git log                   | `Space g m l l`                    |
+| git fetch                 | `Space g m f u`                    |
+| git fetch -p              | `Space g m f -p u` (originで削除されたブランチをローカルからも削除) |
+| git pull                  | `Space g m F u`                    |
 | git add .                 | `Space g m S`                      |
 | git commit -m             | `Space g m c c`                    |
 | git push                  | `Space g m p u`                    |
+| git stash (save)          | `Space g m z z` (全部stashする)      |
+| git stash apply           | status画面でapplyしたいstashを選択 => `z a` |
+| git stash drop            | status画面でdropしたいstashを選択 => `z k` |
 | git rebase develop        | `Space g m r e` => `develop`を選択    |
 | git rebase -i 4ff89t3     | A:<br>1. log画面で繋げたいコミット行を上から範囲選択する(4ff89t3直上のコミットまで)<br>2. `r i` |
 |                           | B:<br>1. status画面で `r i`<br>2.範囲選択して `Ctrl+c Ctrl+c` |
